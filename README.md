@@ -409,4 +409,4 @@ To uninstall:
 - See command output for details
 
 
-Create Project New Style Knyaz Qasan 
+Create Project New Style Knyaz Qasan  All rights reserved 
