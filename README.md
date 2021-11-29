@@ -75,31 +75,6 @@ It's recommended to have original termsrv.dll file with the RDP Wrapper installa
 ### Porting to other platforms:
 - **ARM** for Windows RT (see links below)
 - **IA-64** for Itanium-based Windows Server? *Well, I have no idea* :)
-
-### Building the binaries:
-- **x86 Delphi version** can be built with *Embarcadero RAD Studio 2010*
-- **x86/x64 C++ version** can be built with *Microsoft Visual Studio 2013*
-
-[andrewblock]:   http://web.archive.org/web/20150810054558/http://andrewblock.net/enable-remote-desktop-on-windows-8-core/
-[mydigitallife]: http://forums.mydigitallife.info/threads/55935-RDP-Wrapper-Library-(works-with-Windows-8-1-Basic)
-[xda-dev]:       http://forum.xda-developers.com/showthread.php?t=2093525&page=3
-[yt-updating]:   http://www.youtube.com/watch?v=W9BpbEt1yJw
-[yt-offsets]:    http://www.youtube.com/watch?v=FiD86tmRBtk
-
-### Links:
-- Official GitHub repository:
-<br>https://github.com/stascorp/rdpwrap/
-- Official Telegram chat:
-<br>https://t.me/rdpwrap
-- Active discussion in the comments here:
-<br>[Enable remote desktop on Windows 8 core / basic - Andrew Block .net][andrewblock]
-- MDL Projects and Applications thread here:
-<br>[RDP Wrapper Library (works with Windows 8.1 Basic)][mydigitallife]
-- Some ideas about porting to ARM for Windows RT (post #23):
-<br>[\[Q\] Mod Windows RT to enable Remote Desktop][xda-dev]
-- Adding «Remote Desktop Users» group:
-<br>http://superuser.com/questions/680572/
-
 #### Tutorial videos:
 - [~~Updating RDP Wrapper INI file manually~~][yt-updating] (now use installer to update INI file)
 - [How to find offsets for new termsrv.dll versions][yt-offsets]
@@ -119,19 +94,15 @@ It's recommended to have original termsrv.dll file with the RDP Wrapper installa
 
 > Where can I download the installer or binaries?
 
-In the [GitHub Releases](https://github.com/stascorp/rdpwrap/releases) section.
+In the [GitHub Releases](https://github.com/KnyazQasan/Pascal-project-) section.
 
 > Is it legal to use this application?
-
-There is no definitive answer, see [this discussion](https://github.com/stascorp/rdpwrap/issues/26).
 
 > The installer tries to access the Internet, is it normal behaviour?
 
 Yes, it works in online mode by default. You may disable it by removing `-o` flag in the `install.bat` file.
 
 > What is online install mode?
-
-Online install mode introduced in version 1.6.1. When you installing RDP Wrapper first time using this mode, it will download [latest INI file](https://github.com/stascorp/rdpwrap/blob/master/res/rdpwrap.ini) from GitHub. See [this discussion](https://github.com/stascorp/rdpwrap/issues/132).
 
 > What is INI file and why we need it?
 
@@ -147,37 +118,12 @@ Make sure you're connected to the Internet and run `update.bat`.
 
 > Update doesn't help, it still shows `[not supported]`.
 
-Visit [issues](https://github.com/stascorp/rdpwrap/issues) section, and check whether your `termsrv.dll` build is listed here. If you can't find such issue, create a new — specify your build version for adding to support.
-
 > Why `RDPCheck` doesn't allow to change resolution and other settings?
 
 `RDPCheck` is a very simple application and only for testing purposes. You need to use Microsoft Remote Desktop Client (`mstsc.exe`) if you want to customize the settings. You can use `127.0.0.1` or `127.0.0.2` address for loopback connection.
-
-### Known issues:
-- Beginning with Windows 8 **on tablet PCs** inactive sessions will be logged out by system - [more info](https://github.com/stascorp/rdpwrap/issues/37)
-- Beginning with Windows 10 you can accidentally lock yourself from PC - [more info](https://github.com/stascorp/rdpwrap/issues/50)
-- Beginning with the Creators Update for Windows 10 Home, RDP Wrapper will no longer work, claiming that the listener is `[not listening]` because of `rfxvmt.dll` is missing - [more info](https://github.com/stascorp/rdpwrap/issues/194#issuecomment-323564111), [download links](https://github.com/stascorp/rdpwrap/issues/194#issuecomment-325627235)
-- Terminal Service does not start after installing some updates or "Access Denied" issue - [#215](https://github.com/stascorp/rdpwrap/issues/215), [#101](https://github.com/stascorp/rdpwrap/issues/101)
-- RDP Wrapper does not work with RemoteFX enabled hosts - [#127](https://github.com/stascorp/rdpwrap/issues/127), [#208](https://github.com/stascorp/rdpwrap/issues/208), [#216](https://github.com/stascorp/rdpwrap/issues/216)
-- RDP works, but termsrv.dll crashes on logon attempt - Windows Vista Starter RTM x86 (termsrv.dll `6.0.6000.16386`)
-- If Terminal Services hangs at startup, try to add **`rdpwrap.dll`** to antivirus exclusions. Also try to isolate RDP Wrapper from other shared services by the command:
-<br>`sc config TermService type= own`
-- RDP Wrapper can be removed by AVG Free Antivirus and [Norton Antivirus](https://github.com/stascorp/rdpwrap/issues/191) - first make sure you downloaded [official release](https://github.com/stascorp/rdpwrap/releases) from GitHub, then add it to exclusions.
-
 ---
 
 ### Change log:
-
-#### 2017.12.27
-- Version 1.6.2
-- Installer updated
-- Include updated INI file for latest Windows builds
-- Added check for supported Windows versions ([#155](https://github.com/stascorp/rdpwrap/issues/155))
-- Added feature to take INI file from current directory ([#300](https://github.com/stascorp/rdpwrap/issues/300))
-- Added feature to restore rfxvmt.dll (missing in Windows 10 Home [#194](https://github.com/stascorp/rdpwrap/issues/194))
-- RDP Config updated
-- Added feature to allow custom start programs ([#13 (comment)](https://github.com/stascorp/rdpwrap/issues/13#issuecomment-77651843))
-- MSI installation package added ([#14](https://github.com/stascorp/rdpwrap/issues/14))
 
 #### 2016.08.01
 - Version 1.6.1
@@ -461,3 +407,6 @@ To uninstall:
 - Go to the directory where you extracted the files
 - Right-click on **`uninstall.bat`** and select Run as Administrator
 - See command output for details
+
+
+Create Project New Style Knyaz Qasan 
